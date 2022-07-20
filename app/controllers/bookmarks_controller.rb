@@ -18,7 +18,7 @@ class BookmarksController < ApplicationController
     end
 
     def method_name
-z
+
     end
 
   end
