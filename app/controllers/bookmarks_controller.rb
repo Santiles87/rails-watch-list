@@ -16,6 +16,11 @@ class BookmarksController < ApplicationController
     else
       render.new
     end
+
+    def method_name
+z
+    end
+
   end
 
   private
