@@ -11,21 +11,21 @@ class BookmarksController < ApplicationController
 
     @bookmark.list = @list
 
-    if @bookmark.save!
+    if @bookmark.save
       redirect_to list_path(@list)
     else
-      render.new
+      render "new"
     end
+  end
 
-    def method_name
-
-    end
-
+  def destroy
+    @bookmark = Bookmark.find params[:id]
+    @bookmark.destroy
   end
 
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id, :list_id)
+    params.require(:bookmark).permit(:comment, :movie_id)
   end
 end
